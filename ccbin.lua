@@ -29,7 +29,7 @@ elseif tArgs[1] == "put" and (#tArgs == 2 or #tArgs == 3) then
   if not tArgs[3] then tArgs[3] = "Untitled" end
   local fhFile = fs.open(tArgs[2], "r")
   print "connecting to CCbin..."
-  local h = http.post(sBaseURL.."api.php", "name="..tArgs[3].."&paste="..fhFile.readAll())
+  local h = http.post(sBaseURL.."api.php", "type=make&name="..tArgs[3].."&paste="..fhFile.readAll())
   fhFile.close()
   print ("Done! Saved in the cloud at "..sBaseURL.."?id="..h.readAll())
   h.close()
