@@ -16,7 +16,7 @@ while true do
   j = i + 1
 end
 
-if tArgs[1] == "get" and #tArgs == 2 then
+if tArgs[1] == "get" and #tArgs == 3 then
   print "connecting to CCbin..."
   local h = http.get(sBaseURL.."raw.php?id="..tArgs[2])
   local fhFile = fs.open(shell.resolve(tArgs[3]), "w")
