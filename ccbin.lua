@@ -26,7 +26,7 @@ if tArgs[1] == "get" and #tArgs == 2 then
   print("Done! Saved at "..shell.resolve(tArgs[3])..".")
 
 elseif tArgs[1] == "put" and (#tArgs == 2 or #tArgs == 3) then
-  if not tArgs[3] then tArgs[3] == "Untitled"
+  if not tArgs[3] then tArgs[3] == "Untitled" end
   local fhFile = fs.open(tArgs[2], "r")
   print "connecting to CCbin..."
   local h = http.post(sBaseURL.."api.php", "name="..tArgs[3].."&paste="..fhFile.readAll())
