@@ -1,8 +1,20 @@
---Original by figgycity50
---Modified by Egor305
+--Authors: figgycity50, Egor305
 local tArgs = {...}
 local sBaseURL = "http://figgycity50.kd.io/ccbin/"
-local sProgName = "ccbin.lua"
+
+local sProgName = shell.getRunningProgram()
+local i = 0
+local j = 1
+while true do
+  i = sProgName:find("/",i+1)
+  if i == nil then
+    sProgName = sProgName:sub(j,-1)
+    i = nil
+    j = nil
+    break
+  end
+  j = i + 1
+end
 
 if tArgs[1] == "get" and #tArgs == 2 then
   print "connecting to CCbin..."
