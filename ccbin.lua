@@ -1,9 +1,12 @@
+--Original by figgycity50
+--Modified by Egor305
 local tArgs = {...}
-local baseurl = "http://figgycity50.kd.io/ccbin/"
+local sBaseURL = "http://figgycity50.kd.io/ccbin/"
+local sProgName = "ccbin.lua"
 
 if tArgs[1] == "get" and #tArgs == 2 then
   print "connecting to CCbin..."
-  local h = http.get(baseurl.."raw.php?id="..tArgs[2])
+  local h = http.get(sBaseURL.."raw.php?id="..tArgs[2])
   local fhFile = fs.open(shell.resolve(tArgs[3]), "w")
   fhFile.write(h.readAll())
   fhFile.close()
@@ -14,11 +17,11 @@ elseif tArgs[1] == "put" and I#tArgs == 2 or #tArgs == 3) then
   if not tArgs[3] then tArgs[3] == "Untitled"
   local fhFile = fs.open(tArgs[2], "r")
   print "connecting to CCbin..."
-  local h = http.post(baseurl.."api.php", "name="..tArgs[3].."&paste="..fhFile.readAll())
+  local h = http.post(sBaseURL.."api.php", "name="..tArgs[3].."&paste="..fhFile.readAll())
   fhFile.close()
-  print ("Done! Saved in the cloud at "..baseurl.."?id="..h.readAll())
+  print ("Done! Saved in the cloud at "..sBaseURL.."?id="..h.readAll())
   h.close()
 
 else
-  print("Usage: ccbin.lua <get <id> <filename>|put <filename> [title]>")
+  print("Usages:\n"..sProgName.." get <id> <filename>\n"..sProgName.." put <filename> [title]")
 end
