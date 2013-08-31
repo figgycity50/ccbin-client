@@ -2,7 +2,7 @@
 local tArgs = {...}
 local sBaseURL = "http://figgycity50.kd.io/ccbin/" --Base URL. If hosting changes, change this.
 
-if no http then
+if not http then
   print("HTTP is off!!")
   return nil
 end
