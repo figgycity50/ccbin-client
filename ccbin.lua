@@ -2,6 +2,11 @@
 local tArgs = {...}
 local sBaseURL = "http://figgycity50.kd.io/ccbin/" --Base URL. If hosting changes, change this.
 
+if no http then
+  print("HTTP is off!!")
+  return nil
+end
+
 local sProgName = shell.getRunningProgram() --Gets program's name, in case it's get renamed.
 local i = 0
 local j = 1
