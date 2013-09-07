@@ -2,19 +2,12 @@
 local tArgs = {...}
 local sBaseURL = "http://figgycity50.kd.io/ccbin/" --Base URL. If hosting changes, change this.
 
-local sProgName = shell.getRunningProgram() --Gets program's name, in case it's get renamed.
-local i = 0
-local j = 1
-while true do
-  i = sProgName:find("/",j)
-  if not i then
-    sProgName = sProgName:sub(j,-1)
-    i = nil
-    j = nil
-    break
-  end
-  j = i + 1
+if not http then
+  print("HTTP is off!!")
+  return nil
 end
+
+local sProgName = fs.getName(shell.getRunningProgram()) --Gets program's name, in case it's get renamed.
 
 if tArgs[1] == "get" and #tArgs == 3 then --Get paste
   print "connecting to CCbin..."
