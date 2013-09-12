@@ -1,6 +1,6 @@
 --Authors: figgycity50, Egor305
 local tArgs = {...}
-local sBaseURL = "http://figgycity50.kd.io/ccbin/" --Base URL. If hosting changes, change this.
+local sBaseURL = "http://www.ccbin.co.nf/" --Base URL. If hosting changes, change this. --Hosting changed. I just knew that would be useful
 
 if not http then
   print("HTTP is off!!")
