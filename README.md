@@ -1,7 +1,7 @@
 ccbin-client
 ============
 Forum Thread: http://tinyurl.com/ccbin-forumthread<br />
-User interface: http://www.ccbin.tk/  Old Url: http://figgycity50.kd.io/ccbin<br />
+User interface: https://blaizecraft.com/ccbin/ Planned Url: http://www.ccbin.tk/<br />
 Server-Side Source: http://github.com/figgycity50/ccbin-server<br />
 
 Usages:<br />
