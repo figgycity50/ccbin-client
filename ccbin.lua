@@ -1,6 +1,6 @@
 --Authors: figgycity50, Egor305
 local tArgs = {...}
-local sBaseURL = "http://figgycity50.kd.io/ccbin/" --Base URL. If hosting changes, change this.
+local sBaseURL = "https://blaizecraft.com/ccbin/" --Base URL. If hosting changes, change this. --Hosting changed. I just knew that would be useful
 
 if not http then
   print("HTTP is off!!")
@@ -22,7 +22,7 @@ elseif tArgs[1] == "put" and (#tArgs == 2 or #tArgs == 3) then --Put paste
   if not tArgs[3] then tArgs[3] = "" end
   local fhFile = fs.open(tArgs[2], "r")
   print "connecting to CCbin..."
-  local h = http.post(sBaseURL.."api.php", "type=make&name="..tArgs[3].."&paste="..fhFile.readAll())
+  local h = http.post(sBaseURL.."api.php", "type=make&title="..tArgs[3].."&paste="..fhFile.readAll())
   fhFile.close()
   print ("Done! Saved in the cloud at "..sBaseURL.."?id="..h.readAll())
   h.close()
